@@ -5,3 +5,5 @@ class Connection:
         self.podURL = podURL_
     def close_connection(self):
         self.is_finalized = 1
+    def __init__(self) -> None:
+        pass
