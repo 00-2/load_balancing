@@ -1,5 +1,15 @@
 version: '3'
 services:
+  balancier:
+    build:
+      context: backend
+      dockerfile: Dockerfile.backend
+    environment:
+      - APP_ENV=dev
+    ports:
+      - "30001:30001"
+    volumes:
+     - ./balancier:/code
   pod_1:
     build:
       context: backend
