@@ -3,4 +3,6 @@ COPY requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
 ADD ./backend /code
 WORKDIR /code
-CMD gunicorn -w 1 -b 0.0.0.0:40001 --worker-class gevent backend.server:app
+ARG APP_NUM=0
+ENV APP_NUM=${APP_NUM}
+CMD gunicorn -w 1 -b 0.0.0.0:4000${APP_NUM} --worker-class gevent backend.server:app

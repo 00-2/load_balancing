@@ -1,12 +1,62 @@
 version: '3'
 services:
-  backend:
+  pod_1:
     build:
       context: backend
       dockerfile: Dockerfile.backend
+      args:
+        APP_NUM: 1
     environment:
       - APP_ENV=dev
     ports:
       - "40001:40001"
+    volumes:
+     - ./backend:/code
+  pod_2:
+    build:
+      context: backend
+      dockerfile: Dockerfile.backend
+      args:
+        APP_NUM: 2
+    environment:
+      - APP_ENV=dev
+    ports:
+      - "40002:40002"
+    volumes:
+     - ./backend:/code
+  pod_3:
+    build:
+      context: backend
+      dockerfile: Dockerfile.backend
+      args:
+        APP_NUM: 3
+    environment:
+      - APP_ENV=dev
+    ports:
+      - "40003:40003"
+    volumes:
+     - ./backend:/code
+  pod_4:
+    build:
+      context: backend
+      dockerfile: Dockerfile.backend
+      args:
+        APP_NUM: 4
+    environment:
+      - APP_ENV=dev
+    ports:
+      - "40004:40004"
+    volumes:
+     - ./backend:/code
+  pod_5:
+    build:
+      context: backend
+      dockerfile: Dockerfile.backend
+      args:
+        APP_NUM: 5
+    environment:
+      - APP_ENV=dev
+    ports:
+      - "40005:40005"
     volumes:
      - ./backend:/code
