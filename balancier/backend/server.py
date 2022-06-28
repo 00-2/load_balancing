@@ -28,10 +28,9 @@ async def handle_request(pod, connection) -> None:
     pod.create_connection()
     connection.set_pod_url(pod.url)
     html = await fetch_html(pod.url)
+    #TODO recognize html
     if (html):
         connection.set_is_finalized()
-
-    #TODO async function, wait to response +
 
 class Balancier(Flask):
     _next = 0
@@ -54,7 +53,6 @@ class Balancier(Flask):
 
 app = Balancier(f"client")
 
-# app.config.from_object(f"backend.{env}_settings")
 app.server_id = 1
 
 @app.route('/')
