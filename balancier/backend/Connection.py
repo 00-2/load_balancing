@@ -1,6 +1,7 @@
 class Connection:
-    serverID = -1
+    podURL = -1
     is_finalized = -1
-    def set_server_id(self, serverID_) -> None:
-        self.serverID = serverID_
-    
+    def set_pod_url(self, podURL_) -> None:
+        self.podURL = podURL_
+    def close_connection(self):
+        self.is_finalized = 1
