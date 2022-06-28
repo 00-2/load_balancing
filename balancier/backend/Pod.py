@@ -7,5 +7,6 @@ class Pod:
     _connection_count = 0
     def __init__(self, url_) -> None:
         self.url = url_
+        #TODO check is url ping
     # TODO ON CREATE CONNECTION -> connection_count++
     # TODO on async holder return -> connection_count--
